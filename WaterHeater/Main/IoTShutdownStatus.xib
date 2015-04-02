@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IoTShutdownStatus">
+            <connections>
+                <outlet property="labelRoomTemp" destination="caf-IQ-tiL" id="wYO-ci-SUB"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" alpha="0.74999999999999978" tag="99" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGx-GK-Oxe">
+                    <rect key="frame" x="167" y="107" width="266" height="266"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="266" id="HRN-f3-2cW"/>
+                        <constraint firstAttribute="width" constant="266" id="lN0-sL-nMh"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="shutdown.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onPowerOn:" destination="-1" eventType="touchUpInside" id="ptm-mM-pKW"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="caf-IQ-tiL">
+                    <rect key="frame" x="311" y="138" width="28" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="28" id="GOp-kg-5GK"/>
+                        <constraint firstAttribute="width" constant="28" id="QWm-37-kQ7"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前温度" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AkV-Co-NxX">
+                    <rect key="frame" x="259" y="145" width="100" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="8xZ-k5-JpC"/>
+                        <constraint firstAttribute="height" constant="21" id="W15-a2-NAi"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="。" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ne-aL-eSB">
+                    <rect key="frame" x="341" y="131" width="17" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="Zsw-gx-2xn"/>
+                        <constraint firstAttribute="width" constant="17" id="yLC-e1-wOq"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="AkV-Co-NxX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="145" id="36S-hb-u9B"/>
+                <constraint firstItem="1Ne-aL-eSB" firstAttribute="leading" secondItem="caf-IQ-tiL" secondAttribute="trailing" constant="2" id="BmO-Lc-1sL"/>
+                <constraint firstItem="jGx-GK-Oxe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="107" id="Giy-Dg-PM1"/>
+                <constraint firstItem="1Ne-aL-eSB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="131" id="H5W-Dz-unh"/>
+                <constraint firstAttribute="centerX" secondItem="jGx-GK-Oxe" secondAttribute="centerX" id="JdB-uv-cZV"/>
+                <constraint firstItem="caf-IQ-tiL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="138" id="N7z-yO-vMP"/>
+                <constraint firstAttribute="centerX" secondItem="AkV-Co-NxX" secondAttribute="centerX" constant="-9" id="Tqx-fr-9hc"/>
+                <constraint firstItem="caf-IQ-tiL" firstAttribute="leading" secondItem="AkV-Co-NxX" secondAttribute="trailing" constant="-48" id="oGw-LS-Pt5"/>
+            </constraints>
+            <point key="canvasLocation" x="201" y="208"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="shutdown.png" width="241" height="241"/>
+    </resources>
+</document>

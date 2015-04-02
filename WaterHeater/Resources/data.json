@@ -1,0 +1,380 @@
+{
+    "name": "机智云智能热水器",
+    "entities": [
+                 {
+                 "id": 0,
+                 "display_name": "机智云开发套件",
+                 "attrs": [
+                           {
+                           "display_name": "设备开关",
+                           "name": "Switch",
+                           "data_type": "bool",
+                           "position": {
+                           "bit_offset": 0,
+                           "len": 1,
+                           "unit": "bit",
+                           "byte_offset": 0
+                           },
+                           "type": "status_writable",
+                           "id": 0,
+                           "desc": "....."
+                           },
+                           {
+                           "display_name": "预约开关",
+                           "name": "Reserve_OnOff",
+                           "data_type": "bool",
+                           "position": {
+                           "bit_offset": 1,
+                           "len": 1,
+                           "unit": "bit",
+                           "byte_offset": 0
+                           },
+                           "type": "status_writable",
+                           "id": 1,
+                           "desc": "....."
+                           },
+                           {
+                           "display_name": "模式切换",
+                           "name": "Mode",
+                           "data_type": "enum",
+                           "enum": [
+                                    "智能模式",
+                                    "节能模式",
+                                    "速热模式",
+                                    "加热模式",
+                                    "保温模式",
+                                    "安全模式"
+                                    ],
+                           "position": {
+                           "bit_offset": 2,
+                           "len": 3,
+                           "unit": "bit",
+                           "byte_offset": 0
+                           },
+                           "type": "status_writable",
+                           "id": 2,
+                           "desc": "....."
+                           },
+                           {
+                           "display_name": "目标温度",
+                           "name": "Set_Temp",
+                           "data_type": "uint8",
+                           "position": {
+                           "bit_offset": 0,
+                           "len": 1,
+                           "unit": "byte",
+                           "byte_offset": 1
+                           },
+                           "uint_spec": {
+                           "addition": 0,
+                           "max": 75,
+                           "ratio": 1,
+                           "min": 30
+                           },
+                           "type": "status_writable",
+                           "id": 3,
+                           "desc": "....."
+                           },
+                           {
+                           "display_name": "倒计时预约",
+                           "name": "CountDown_Reserve",
+                           "data_type": "uint16",
+                           "position": {
+                           "bit_offset": 0,
+                           "len": 2,
+                           "unit": "byte",
+                           "byte_offset": 2
+                           },
+                           "uint_spec": {
+                           "addition": 0,
+                           "max": 1440,
+                           "ratio": 1,
+                           "min": 0
+                           },
+                           "type": "status_writable",
+                           "id": 4,
+                           "desc": "....."
+                           },
+                           {
+                           "display_name": "定时预约",
+                           "name": "Time_Reserve",
+                           "data_type": "uint16",
+                           "position": {
+                           "bit_offset": 0,
+                           "len": 2,
+                           "unit": "byte",
+                           "byte_offset": 4
+                           },
+                           "uint_spec": {
+                           "addition": 0,
+                           "max": 1439,
+                           "ratio": 1,
+                           "min": 0
+                           },
+                           "type": "status_writable",
+                           "id": 5,
+                           "desc": "....."
+                           },
+                           {
+                           "display_name": "时钟校准",
+                           "name": "Calibration_Time",
+                           "data_type": "uint16",
+                           "position": {
+                           "bit_offset": 0,
+                           "len": 2,
+                           "unit": "byte",
+                           "byte_offset": 6
+                           },
+                           "uint_spec": {
+                           "addition": 0,
+                           "max": 1439,
+                           "ratio": 1,
+                           "min": 0
+                           },
+                           "type": "status_writable",
+                           "id": 6,
+                           "desc": "....."
+                           },
+                           {
+                           "display_name": "当前温度",
+                           "name": "Room_Temp",
+                           "data_type": "uint8",
+                           "position": {
+                           "bit_offset": 0,
+                           "len": 1,
+                           "unit": "byte",
+                           "byte_offset": 8
+                           },
+                           "uint_spec": {
+                           "addition": 0,
+                           "max": 99,
+                           "ratio": 1,
+                           "min": 0
+                           },
+                           "type": "status_readonly",
+                           "id": 7,
+                           "desc": "....."
+                           },
+                           {
+                           "display_name": "干烧故障",
+                           "name": "Fault_burning",
+                           "data_type": "bool",
+                           "position": {
+                           "bit_offset": 0,
+                           "len": 1,
+                           "unit": "bit",
+                           "byte_offset": 9
+                           },
+                           "type": "fault",
+                           "id": 8,
+                           "desc": "....."
+                           },
+                           {
+                           "display_name": "传感器开路故障",
+                           "name": "Fault_SensorOpen",
+                           "data_type": "bool",
+                           "position": {
+                           "bit_offset": 1,
+                           "len": 1,
+                           "unit": "bit",
+                           "byte_offset": 9
+                           },
+                           "type": "fault",
+                           "id": 9,
+                           "desc": "....."
+                           },
+                           {
+                           "display_name": "传感器短路故障",
+                           "name": "Fault_SensorShort",
+                           "data_type": "bool",
+                           "position": {
+                           "bit_offset": 2,
+                           "len": 1,
+                           "unit": "bit",
+                           "byte_offset": 9
+                           },
+                           "type": "fault",
+                           "id": 10,
+                           "desc": "....."
+                           },
+                           {
+                           "display_name": "超温故障",
+                           "name": "Fault_OverTemp",
+                           "data_type": "bool",
+                           "position": {
+                           "bit_offset": 3,
+                           "len": 1,
+                           "unit": "bit",
+                           "byte_offset": 9
+                           },
+                           "type": "fault",
+                           "id": 11,
+                           "desc": "....."
+                           }
+                           ],
+                 "name": "entity0"
+                 }
+                 ],
+    "protocolType": "standard",
+    "product_key": "4b669cc34a1b4180afb3afb06666e5ab",
+    "packetVersion": "0x00000004",
+    "ui": {
+        "object": {
+            "version": 4,
+            "showEditButton": false
+        },
+        "sections": [
+                     {
+                     "elements": [
+                                  {
+                                  "boolValue": false,
+                                  "object": {
+                                  "action": "entity0",
+                                  "bind": [
+                                           "entity0.Switch"
+                                           ],
+                                  "perm": "W"
+                                  },
+                                  "type": "QBooleanElement",
+                                  "key": "entity0.Switch",
+                                  "title": "设备开关"
+                                  },
+                                  {
+                                  "boolValue": false,
+                                  "object": {
+                                  "action": "entity0",
+                                  "bind": [
+                                           "entity0.Reserve_OnOff"
+                                           ],
+                                  "perm": "W"
+                                  },
+                                  "type": "QBooleanElement",
+                                  "key": "entity0.Reserve_OnOff",
+                                  "title": "预约开关"
+                                  },
+                                  {
+                                  "items": [
+                                            "智能模式",
+                                            "节能模式",
+                                            "速热模式",
+                                            "加热模式",
+                                            "保温模式",
+                                            "安全模式"
+                                            ],
+                                  "object": {
+                                  "action": "entity0",
+                                  "bind": [
+                                           "entity0.Mode"
+                                           ],
+                                  "perm": "W"
+                                  },
+                                  "type": "QRadioElement",
+                                  "key": "entity0.Mode",
+                                  "title": "模式切换"
+                                  },
+                                  {
+                                  "title": "目标温度",
+                                  "bind": "floatValue:float",
+                                  "object": {
+                                  "action": "entity0",
+                                  "bind": [
+                                           "entity0.Set_Temp"
+                                           ],
+                                  "uint_spec": {
+                                  "max": 75,
+                                  "step": 1,
+                                  "min": 30
+                                  },
+                                  "perm": "W"
+                                  },
+                                  "value": 0,
+                                  "key": "entity0.Set_Temp",
+                                  "maximumValue": 75,
+                                  "minimumValue": 30,
+                                  "type": "QFloatElement"
+                                  },
+                                  {
+                                  "title": "倒计时预约",
+                                  "bind": "floatValue:float",
+                                  "object": {
+                                  "action": "entity0",
+                                  "bind": [
+                                           "entity0.CountDown_Reserve"
+                                           ],
+                                  "uint_spec": {
+                                  "max": 1440,
+                                  "step": 1,
+                                  "min": 0
+                                  },
+                                  "perm": "W"
+                                  },
+                                  "value": 0,
+                                  "key": "entity0.CountDown_Reserve",
+                                  "maximumValue": 1440,
+                                  "minimumValue": 0,
+                                  "type": "QFloatElement"
+                                  },
+                                  {
+                                  "title": "定时预约",
+                                  "bind": "floatValue:float",
+                                  "object": {
+                                  "action": "entity0",
+                                  "bind": [
+                                           "entity0.Time_Reserve"
+                                           ],
+                                  "uint_spec": {
+                                  "max": 1439,
+                                  "step": 1,
+                                  "min": 0
+                                  },
+                                  "perm": "W"
+                                  },
+                                  "value": 0,
+                                  "key": "entity0.Time_Reserve",
+                                  "maximumValue": 1439,
+                                  "minimumValue": 0,
+                                  "type": "QFloatElement"
+                                  },
+                                  {
+                                  "title": "时钟校准",
+                                  "bind": "floatValue:float",
+                                  "object": {
+                                  "action": "entity0",
+                                  "bind": [
+                                           "entity0.Calibration_Time"
+                                           ],
+                                  "uint_spec": {
+                                  "max": 1439,
+                                  "step": 1,
+                                  "min": 0
+                                  },
+                                  "perm": "W"
+                                  },
+                                  "value": 0,
+                                  "key": "entity0.Calibration_Time",
+                                  "maximumValue": 1439,
+                                  "minimumValue": 0,
+                                  "type": "QFloatElement"
+                                  },
+                                  {
+                                  "object": {
+                                  "action": "entity0",
+                                  "bind": [
+                                           "entity0.Room_Temp"
+                                           ],
+                                  "uint_spec": {
+                                  "max": 99,
+                                  "step": 1,
+                                  "min": 0
+                                  },
+                                  "perm": "N"
+                                  },
+                                  "type": "QLabelElement",
+                                  "key": "entity0.Room_Temp",
+                                  "title": "当前温度"
+                                  }
+                                  ]
+                     }
+                     ]
+    }
+}
