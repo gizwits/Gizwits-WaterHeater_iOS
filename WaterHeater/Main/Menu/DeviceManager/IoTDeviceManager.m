@@ -208,21 +208,21 @@
 }
 
 - (XPGWifiDevice *)getDevice{
-    NSArray *onlineDeviceList = [deviceList objectAtIndex:0];
-    if ([onlineDeviceList count] <= 0){
-        [self exitToDeviceList];
+    NSArray *onlineDeviceList = deviceList[0];
+    if ([onlineDeviceList count] == 0){
         return nil;
     }
-    for(XPGWifiDevice *dev in onlineDeviceList){
-        if(dev.isConnected){
-            return dev;
-        }
+    
+    //如果选中的设备未连接，或者已经解除绑定
+    XPGWifiDevice *oldDevice = [IoTMainController currentController].device;
+    NSInteger index = [onlineDeviceList indexOfObject:oldDevice];
+    if(index >= onlineDeviceList.count || oldDevice.isConnected != YES)
+    {
+        //选择第一个在线的设备
+        return onlineDeviceList[0];
     }
-    XPGWifiDevice *topDevice = [onlineDeviceList objectAtIndex:0];
-    //设备连接后，跳转到控制页面
-    return topDevice;
+    return oldDevice;
 }
-
 
 - (void)onDeivceLogin:(XPGWifiDevice *)dev{
     [dev login:[IoTProcessModel sharedModel].currentUid token:[IoTProcessModel sharedModel].currentToken];

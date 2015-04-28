@@ -78,13 +78,34 @@
 + (IoTProcessModel *)sharedModel;
 
 /**
- * @brief 初始化选项
+ * @brief 初始化
  * @param appid：用于 SDK 初始化的字符串
  * @param product：用于搜索设备时过滤 product key
  * @param data：product json
  * @result 非空则成功
  */
 + (IoTProcessModel *)startWithAppID:(NSString *)appid product:(NSString *)product productJson:(NSData *)data;
+
+/**
+ * @brief 初始化中控
+ * @param appid：用于 SDK 初始化的字符串
+ * @param products 包含两个设备的信息
+ *  {
+ *      "CentralDevice":
+ *      {
+ *          "ProductKey": [ProductKey],
+ *          "Data": [Data]
+ *      },
+ *      "SubDevice":
+ *      {
+ *          "ProductKey": [ProductKey],
+ *          "Data": [Data]
+ *      }
+ *  }
+ *
+ * @result 非空则成功
+ */
++ (IoTProcessModel *)startWithAppID:(NSString *)appid withCentralProducts:(NSDictionary *)products;
 
 /**
  * @brief 在 Delegate 中，实现快速入口完成的事件
@@ -103,7 +124,7 @@
 @property (nonatomic, strong) UIColor *tintColor;
 
 /**
- * @brief 当前已登录的用户名
+ * @brief 当前已登录的用户名、uid、token
  */
 @property (nonatomic, strong, readonly) NSString *currentUser;
 @property (nonatomic, strong, readonly) NSString *currentUid;
