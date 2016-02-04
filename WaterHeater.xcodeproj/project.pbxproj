@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A19DD9D1C4E425400F7A6FC /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A19DD9C1C4E425400F7A6FC /* CoreTelephony.framework */; };
+		1A19DDA11C4E437B00F7A6FC /* IoTVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A19DD9F1C4E437B00F7A6FC /* IoTVersion.m */; };
+		1A19DDA21C4E437B00F7A6FC /* IoTVersion.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A19DDA01C4E437B00F7A6FC /* IoTVersion.xib */; };
+		1A19DDA41C4E445C00F7A6FC /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A19DDA31C4E445C00F7A6FC /* Icon@2x.png */; };
 		C36FFD201A89A33100DFEBC2 /* IoTAbout.m in Sources */ = {isa = PBXBuildFile; fileRef = C36FFD1E1A89A33100DFEBC2 /* IoTAbout.m */; };
 		C36FFD211A89A33100DFEBC2 /* IoTAbout.xib in Resources */ = {isa = PBXBuildFile; fileRef = C36FFD1F1A89A33100DFEBC2 /* IoTAbout.xib */; };
 		C36FFD241A89A35C00DFEBC2 /* IoTRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = C36FFD231A89A35C00DFEBC2 /* IoTRecord.m */; };
@@ -227,6 +231,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A19DD9C1C4E425400F7A6FC /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		1A19DD9E1C4E437B00F7A6FC /* IoTVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IoTVersion.h; sourceTree = "<group>"; };
+		1A19DD9F1C4E437B00F7A6FC /* IoTVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IoTVersion.m; sourceTree = "<group>"; };
+		1A19DDA01C4E437B00F7A6FC /* IoTVersion.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IoTVersion.xib; sourceTree = "<group>"; };
+		1A19DDA31C4E445C00F7A6FC /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		C36FFD1D1A89A33100DFEBC2 /* IoTAbout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IoTAbout.h; sourceTree = "<group>"; };
 		C36FFD1E1A89A33100DFEBC2 /* IoTAbout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IoTAbout.m; sourceTree = "<group>"; };
 		C36FFD1F1A89A33100DFEBC2 /* IoTAbout.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IoTAbout.xib; sourceTree = "<group>"; };
@@ -581,6 +590,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A19DD9D1C4E425400F7A6FC /* CoreTelephony.framework in Frameworks */,
 				C3EDEFB61AA5B87400972862 /* CoreLocation.framework in Frameworks */,
 				EE76914C1A43F14900B682DD /* XPGWifiSDK.framework in Frameworks */,
 				EE5D353A1A305293001C1E09 /* libssl.a in Frameworks */,
@@ -902,6 +912,7 @@
 		E282E6B11AAE8A3000437088 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				1A19DDA31C4E445C00F7A6FC /* Icon@2x.png */,
 				D88A6FA41ABA6EDA006F350A /* 2x */,
 				D88A6F061ABA6DDB006F350A /* advancedFeatures */,
 				D88A6F0D1ABA6DDB006F350A /* alert */,
@@ -946,6 +957,7 @@
 		EE33B4C01A1C8ED00003854A = {
 			isa = PBXGroup;
 			children = (
+				1A19DD9C1C4E425400F7A6FC /* CoreTelephony.framework */,
 				EE33B4CB1A1C8ED00003854A /* WaterHeater */,
 				EE33B4CA1A1C8ED00003854A /* Products */,
 			);
@@ -1094,6 +1106,9 @@
 		EE6BF5BD1A3EDD4E00363385 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				1A19DD9E1C4E437B00F7A6FC /* IoTVersion.h */,
+				1A19DD9F1C4E437B00F7A6FC /* IoTVersion.m */,
+				1A19DDA01C4E437B00F7A6FC /* IoTVersion.xib */,
 				C3E3238F1A89A93F0023FF0A /* AccountManager */,
 				EE7F41C71A3F29CF00F68022 /* DeviceManager */,
 				C36FFD1D1A89A33100DFEBC2 /* IoTAbout.h */,
@@ -1419,6 +1434,7 @@
 				EEB74E7C1A4433930039E467 /* Localizable.strings in Resources */,
 				D88A70321ABA6EDA006F350A /* water_heating_confirm_icon@2x.png in Resources */,
 				EEB74EA61A4438760039E467 /* zbar-samples.png in Resources */,
+				1A19DDA21C4E437B00F7A6FC /* IoTVersion.xib in Resources */,
 				D88A70311ABA6EDA006F350A /* water_heating_configure@2x.png in Resources */,
 				D88A70251ABA6EDA006F350A /* power_fullpower@2x.png in Resources */,
 				D88A700F1ABA6EDA006F350A /* home_tab_fullpower@2x.png in Resources */,
@@ -1453,6 +1469,7 @@
 				D88A70391ABA6EDA006F350A /* water_heating_login_textbox2@2x.png in Resources */,
 				D88A70561ABACE40006F350A /* water_heating_menu_back@2x.png in Resources */,
 				D88A6F601ABA6DDB006F350A /* cover_menu_bottom_bg@2x.png in Resources */,
+				1A19DDA41C4E445C00F7A6FC /* Icon@2x.png in Resources */,
 				D88A6F751ABA6DDB006F350A /* good_bg@2x.png in Resources */,
 				D88A6F741ABA6DDB006F350A /* fault_tips@2x.png in Resources */,
 				D88A70201ABA6EDA006F350A /* pattern_safe_icon@2x.png in Resources */,
@@ -1578,6 +1595,7 @@
 				EE5C0E4E1A3FC9FA0019CFDD /* IoTHelpDetail.m in Sources */,
 				D8A7720E1AB6B2A30096D143 /* IoTAppointmentListCell.m in Sources */,
 				C3E323961A89A93F0023FF0A /* IoTAccountManager.m in Sources */,
+				1A19DDA11C4E437B00F7A6FC /* IoTVersion.m in Sources */,
 				EE5C0E5B1A4018C80019CFDD /* IoTMainController.m in Sources */,
 				EE7693591A44019800B682DD /* UICircularSlider.m in Sources */,
 				EE76934E1A44019400B682DD /* SlideNavigationContorllerAnimatorFade.m in Sources */,
@@ -1692,6 +1710,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chao zhang (P7LZM8BSXM)";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Utils/XPGWifiSDK",
@@ -1711,7 +1731,9 @@
 					"$(PROJECT_DIR)/Utils/IoTProcessModel",
 					"$(PROJECT_DIR)/Utils/ZBarSDK",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = cn.zono.WaterHeater;
 				PRODUCT_NAME = WaterHeater;
+				PROVISIONING_PROFILE = "9e4d114e-7cff-426d-8dd0-37b934d57c0e";
 			};
 			name = Debug;
 		};
@@ -1721,6 +1743,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chao zhang (P7LZM8BSXM)";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Utils/XPGWifiSDK",
@@ -1740,7 +1764,9 @@
 					"$(PROJECT_DIR)/Utils/IoTProcessModel",
 					"$(PROJECT_DIR)/Utils/ZBarSDK",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = cn.zono.WaterHeater;
 				PRODUCT_NAME = WaterHeater;
+				PROVISIONING_PROFILE = "9e4d114e-7cff-426d-8dd0-37b934d57c0e";
 			};
 			name = Release;
 		};

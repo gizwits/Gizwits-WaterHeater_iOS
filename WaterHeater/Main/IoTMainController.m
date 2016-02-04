@@ -109,10 +109,14 @@
         IoTAppDelegate.hud.labelText = @"正在更新数据...";
         [IoTAppDelegate.hud showAnimated:YES whileExecutingBlock:^{
             sleep(30);
+            if (!isReiveSuccess) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [[[IoTAlertView alloc] initWithMessage:@"获取状态失败" delegate:nil titleOK:@"确定"] show:YES];
+                });
+            }
         }];
         [self writeDataPoint:IoTDeviceWriteUpdateData value:nil];
     }
-    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onDeivceLogin) name:@"deviceLogin" object:nil];
 }
 
@@ -278,11 +282,13 @@
 }
 
 #pragma mark - delegate 接收数据
-- (BOOL)XPGWifiDevice:(XPGWifiDevice *)device didReceiveData:(NSDictionary *)data result:(int)result{
+- (void)XPGWifiDevice:(XPGWifiDevice *)device didReceiveData:(NSDictionary *)data result:(int)result{
+    
+    NSLog(@" ============== 获取到了数据 =================");
     
     isReiveSuccess = YES;
     if(![device.did isEqualToString:self.device.did])
-        return YES;
+        return;
     
     [IoTAppDelegate.hud hide:YES];
     [self.shutdownStatusCtrl hide:YES];
@@ -354,7 +360,7 @@
      * 报警和错误
      */
     if([self.navigationController.viewControllers lastObject] != self)
-        return YES;
+        return;
     
     /**
      * 清理旧报警及故障
@@ -363,17 +369,18 @@
     
     //判断状态给的faultslist 和 上次的 faultslist 不同，从而确定是否弹出alarm对话框。
     if([self onComparedFaultsListAndNew]){
-        [self onAlarmAlertView];
+//        [self onAlarmAlertView];
         [self onUpdateAlarm];
     }
     if(self.alerts.count == 0 && self.faults.count == 0)
     {
         [self onUpdateAlarm];
-        return YES;
+        return;
     }
     /**
      * 添加当前故障
      */
+    BOOL needAlert = false;
     NSDate *date = [NSDate date];
     if(self.alerts.count > 0)
     {
@@ -381,7 +388,10 @@
         {
             for(NSString *name in dict.allKeys)
             {
-                [[IoTRecord sharedInstance] addRecord:date information:name];
+                if ([[dict valueForKey:name] intValue]) {
+                    [[IoTRecord sharedInstance] addRecord:date information:name];
+                    needAlert = true;
+                }
             }
         }
     }
@@ -392,14 +402,19 @@
         {
             for(NSString *name in dict.allKeys)
             {
-                [[IoTRecord sharedInstance] addRecord:date information:name];
+                if ([[dict valueForKey:name] intValue]) {
+                    [[IoTRecord sharedInstance] addRecord:date information:name];
+                    needAlert = true;
+                }
             }
         }
     }
     
+    if (needAlert) [self onAlarmAlertView];
+    
     [self onUpdateAlarm];
     
-    return YES;
+    return;
 }
 
 - (CGFloat)prepareForUpdateFloat:(NSString *)str value:(CGFloat)value
@@ -488,11 +503,21 @@
         [self onExitToDeviceList];
     }
     else {
-        [self onDeivceLogin];
+//        [self onDeivceLogin];
+    }
+    //退出到列表
+    for(int i=(int)(self.navigationController.viewControllers.count-1); i>0; i--)
+    {
+        UIViewController *controller = self.navigationController.viewControllers[i];
+        if([controller isKindOfClass:[IoTDeviceList class]])
+        {
+            [self.navigationController popToViewController:controller animated:YES];
+        }
     }
 }
 
 - (void)onExitToDeviceList{
+    isReiveSuccess = YES;
     //退出到列表
      UIViewController *currentController = self.navigationController.viewControllers.lastObject;
     for(int i=(int)(self.navigationController.viewControllers.count-1); i>0; i--)
